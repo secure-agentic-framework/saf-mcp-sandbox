@@ -14,15 +14,15 @@ This checklist ships a sanitized participant experience via a GHCR alias, withou
   - Keep it short, lowercase, and pinned (avoid `latest` for events).
 
 ## Organizer Repo (this repo)
-- [ ] Tag and publish the organizer image (safe-mcp-sandbox)
+- [ ] Tag and publish the organizer image (saf-mcp-sandbox)
   - [ ] `git tag v0.1.0 && git push origin v0.1.0`
-  - [ ] Verify CI smoke test is green and GHCR image exists: `ghcr.io/<org>/safe-mcp-sandbox:v0.1.0`.
-- [ ] Create participant-friendly alias (public): safe-mcp-hackathon
-  - [ ] `docker pull ghcr.io/<org>/safe-mcp-sandbox:v0.1.0`
-  - [ ] `docker tag ghcr.io/<org>/safe-mcp-sandbox:v0.1.0 ghcr.io/<org>/safe-mcp-hackathon:<event-tag>`
-  - [ ] `docker push ghcr.io/<org>/safe-mcp-hackathon:<event-tag>`
+  - [ ] Verify CI smoke test is green and GHCR image exists: `ghcr.io/<org>/saf-mcp-sandbox:v0.1.0`.
+- [ ] Create participant-friendly alias (public): saf-mcp-hackathon
+  - [ ] `docker pull ghcr.io/<org>/saf-mcp-sandbox:v0.1.0`
+  - [ ] `docker tag ghcr.io/<org>/saf-mcp-sandbox:v0.1.0 ghcr.io/<org>/saf-mcp-hackathon:<event-tag>`
+  - [ ] `docker push ghcr.io/<org>/saf-mcp-hackathon:<event-tag>`
 - [ ] (Optional) Auto-publish alias in CI
-  - [ ] Add `ghcr.io/${{ github.repository_owner }}/safe-mcp-hackathon` to Docker metadata images.
+  - [ ] Add `ghcr.io/${{ github.repository_owner }}/saf-mcp-hackathon` to Docker metadata images.
   - [ ] Add an alias tag (e.g., `hackathon`) for tag builds.
 
 ## CI Gating (already added)
@@ -31,18 +31,18 @@ This checklist ships a sanitized participant experience via a GHCR alias, withou
   - Verifies: unsafe description is poisoned; safe description sanitized.
   - Blocks publish on failure.
 
-## Participant Repo: `safe-mcp-hackathon` (sanitized)
+## Participant Repo: `saf-mcp-hackathon` (sanitized)
 - [ ] Create a staging branch and overwrite with sanitized content.
 - [ ] Structure
-  - [ ] `README.md`: TL;DR quickstart (macOS/Linux + Windows). Reference only `ghcr.io/<org>/safe-mcp-sandbox:<event-tag>`.
+  - [ ] `README.md`: TL;DR quickstart (macOS/Linux + Windows). Reference only `ghcr.io/<org>/saf-mcp-sandbox:<event-tag>`.
   - [ ] `docs/quickstart.md`: run (unsafe + safe), sanity check (list tools), expected behavior (generic wording).
   - [ ] `docs/clients.md`: Claude Desktop, Cursor, MCP Inspector; Windows examples; troubleshooting; FAQ.
   - [ ] `docs/rules.md`, `docs/scoring.md`, `docs/submission.md`, `docs/troubleshooting.md`.
   - [ ] `scripts/`: `run-unsafe.sh|.cmd`, `run-safe.sh|.cmd` defaulting to the alias image.
   - [ ] `flags/flag.txt` or a one-liner to create it.
 - [ ] Sanitization
-  - [ ] Remove references to specific class names (e.g., "tool poisoning", "SAFE‑T1001").
-  - [ ] Use generic phrasing: "Identify the vulnerability… map to SAFE taxonomy… validate mitigation.".
+  - [ ] Remove references to specific class names (e.g., "tool poisoning", "SAF‑T1001").
+  - [ ] Use generic phrasing: "Identify the vulnerability… map to SAF taxonomy… validate mitigation.".
 - [ ] GitHub Pages
   - [ ] Add a Pages workflow to publish the docs site from `docs/`.
   - [ ] Ensure no links back to the organizer repo.
@@ -58,9 +58,9 @@ This checklist ships a sanitized participant experience via a GHCR alias, withou
   - `Extra tag/alias` = `<event-tag>` (e.g., `hackathon-YYYY-MM`)
 - [ ] Update `participant-pack/image.env` to the new alias.
 - [ ] Sync pack to public repo:
-  - `scripts/publish-participant.sh` (defaults to `git@github.com:bishnubista/safe-mcp-hackathon.git`)
+  - `scripts/publish-participant.sh` (defaults to `git@github.com:bishnubista/saf-mcp-hackathon.git`)
 - [ ] Tag the public repo with the same alias.
-- [ ] Alias pulls cleanly: `docker pull ghcr.io/<org>/safe-mcp-hackathon:<event-tag>`.
+- [ ] Alias pulls cleanly: `docker pull ghcr.io/<org>/saf-mcp-hackathon:<event-tag>`.
 - [ ] Merge participant-pack to `main`, enable GitHub Pages, switch repo public.
 - [ ] Share only the participant repo URL and the alias image in announcements.
 

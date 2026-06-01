@@ -21,18 +21,18 @@ All examples expect you have created a local `flags/flag.txt` and that Docker ca
 Run without installing (uses `npx`):
 
 - macOS/Linux:
-  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -v "$(pwd)/flags:/opt/flags:ro" ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08`
+  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -v "$(pwd)/flags:/opt/flags:ro" ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08`
 
 - Windows PowerShell:
-  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -v "${PWD}/flags:/opt/flags:ro" ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08`
+  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -v "${PWD}/flags:/opt/flags:ro" ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08`
 
 Safe mode variant (adds an env var before the image):
 
 - macOS/Linux:
-  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -e MODE=safe -v "$(pwd)/flags:/opt/flags:ro" ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08`
+  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -e MODE=safe -v "$(pwd)/flags:/opt/flags:ro" ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08`
 
 - Windows PowerShell:
-  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -e MODE=safe -v "${PWD}/flags:/opt/flags:ro" ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08`
+  `npx @modelcontextprotocol/inspector -- docker run --platform linux/amd64 --rm -i --network none -e MODE=safe -v "${PWD}/flags:/opt/flags:ro" ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08`
 
 In the UI:
 - Tools tab should list `notes_search` and `fs_read`.
@@ -68,13 +68,13 @@ Add or merge this JSON snippet (unsafe mode):
 
 {
   "mcpServers": {
-    "safe-mcp": {
+    "saf-mcp": {
       "command": "docker",
       "args": [
         "run","--platform","linux/amd64","--rm","-i",
         "--network","none",
         "-v","/ABS/PATH/flags:/opt/flags:ro",
-        "ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08"
+        "ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08"
       ]
     }
   }
@@ -84,8 +84,8 @@ Safe mode: insert `"-e","MODE=safe",` before the image tag in `args`.
 
 Notes:
 - Replace `/ABS/PATH/flags` with your absolute folder path.
-  - macOS/Linux example: `/Users/you/projects/safe-mcp/flags:/opt/flags:ro`
-  - Windows JSON needs backslashes escaped: `C:\\Users\\you\\safe-mcp\\flags:/opt/flags:ro`
+  - macOS/Linux example: `/Users/you/projects/saf-mcp/flags:/opt/flags:ro`
+  - Windows JSON needs backslashes escaped: `C:\\Users\\you\\saf-mcp\\flags:/opt/flags:ro`
 - Steps:
   1) Quit Claude Desktop completely.
   2) Open the config file above for your OS. If it doesn't exist, create it with `{}`.
@@ -96,7 +96,7 @@ Notes:
 
 ### Verify Setup
 
-- Open the Tools panel (or ask to list tools). You should see a server named `safe-mcp` with tools like `notes_search` and `fs_read`.
+- Open the Tools panel (or ask to list tools). You should see a server named `saf-mcp` with tools like `notes_search` and `fs_read`.
 - Run a benign test: ask, "Find notes about welcome". The server should respond without errors.
 - Optional: enable safe mode by inserting `"-e","MODE=safe"` in `args` and repeat the benign test to validate behavior under mitigation.
 
@@ -112,13 +112,13 @@ Step-by-step (UI):
 
 {
   "mcpServers": {
-    "safe-mcp": {
+    "saf-mcp": {
       "command": "docker",
       "args": [
         "run","--platform","linux/amd64","--rm","-i",
         "--network","none",
         "-v","/ABS/PATH/flags:/opt/flags:ro",
-        "ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08"
+        "ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08"
       ]
     }
   }
@@ -128,7 +128,7 @@ Safe mode: insert `"-e","MODE=safe",` before the image tag in `args`.
 
 ### Verify Setup
 
-- Open the MCP/Tools view and confirm `safe-mcp` appears with tools like `notes_search` and `fs_read`.
+- Open the MCP/Tools view and confirm `saf-mcp` appears with tools like `notes_search` and `fs_read`.
 - Run a benign test: ask, "Find notes about welcome" and confirm a normal response.
 - Optional: add `"-e","MODE=safe"` to `args` and repeat to validate behavior under mitigation.
 

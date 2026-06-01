@@ -23,7 +23,7 @@ function toolDescriptions() {
 async function main() {
   const server = new Server(
     {
-      name: "safe-mcp-sandbox",
+      name: "saf-mcp-sandbox",
       version: "0.1.0",
     },
     {

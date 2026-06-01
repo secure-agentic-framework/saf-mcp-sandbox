@@ -2,7 +2,7 @@ import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 
 // Default to organizer image name for local smoke test
-const IMAGE = process.env.IMAGE || "safe-mcp-sandbox:smoketest";
+const IMAGE = process.env.IMAGE || "saf-mcp-sandbox:smoketest";
 
 async function listTools(mode) {
   const args = [

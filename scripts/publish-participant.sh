@@ -7,13 +7,13 @@ set -euo pipefail
 #   scripts/publish-participant.sh [--remote <git-url>] [--create]
 # Examples:
 #   scripts/publish-participant.sh                                  # uses default REMOTE
-#   scripts/publish-participant.sh --remote git@github.com:bishnubista/safe-mcp-hackathon.git
+#   scripts/publish-participant.sh --remote git@github.com:bishnubista/saf-mcp-hackathon.git
 #   scripts/publish-participant.sh --create                         # create repo via gh if missing
 #
 # Env vars:
-#   REMOTE   Git URL of the participant repo (default: git@github.com:bishnubista/safe-mcp-hackathon.git)
+#   REMOTE   Git URL of the participant repo (default: git@github.com:bishnubista/saf-mcp-hackathon.git)
 
-REMOTE=${REMOTE:-git@github.com:bishnubista/safe-mcp-hackathon.git}
+REMOTE=${REMOTE:-git@github.com:bishnubista/saf-mcp-hackathon.git}
 CREATE=false
 
 while [[ $# -gt 0 ]]; do
@@ -45,7 +45,7 @@ if $CREATE; then
   if command -v gh >/dev/null 2>&1; then
     if ! gh repo view "${REMOTE#*:}" >/dev/null 2>&1; then
       echo "Creating repo ${REMOTE#*:} via gh..."
-      gh repo create "${REMOTE#*:}" --public --disable-wiki --description "SAFE MCP participant pack"
+      gh repo create "${REMOTE#*:}" --public --disable-wiki --description "SAF MCP participant pack"
     fi
   else
     echo "gh CLI not found; skipping --create. Install gh or create the repo manually." >&2
