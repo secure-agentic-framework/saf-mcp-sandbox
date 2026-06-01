@@ -5,14 +5,14 @@ Configure your preferred MCP client to launch the server via Docker (stdio). Cla
 ## Claude Desktop (recommended)
 - Command: `docker`
 - Args (unsafe mode):
-  `["run","--rm","-i","--read-only","--pids-limit","128","--memory","256m","--security-opt","no-new-privileges","--network","none","-v","/absolute/path/to/flags:/opt/flags:ro","ghcr.io/bishnubista/safe-mcp-sandbox:v0.1.0"]`
+  `["run","--rm","-i","--read-only","--pids-limit","128","--memory","256m","--security-opt","no-new-privileges","--network","none","-v","/absolute/path/to/flags:/opt/flags:ro","ghcr.io/bishnubista/saf-mcp-sandbox:v0.1.0"]`
 - Safe mode demo: add `"-e","MODE=safe"` to args before the image name.
 
 Example JSON snippet:
 ```
 {
   "mcpServers": {
-    "safe-mcp-sandbox": {
+    "saf-mcp-sandbox": {
       "command": "docker",
       "args": [
         "run", "--rm", "-i",
@@ -22,7 +22,7 @@ Example JSON snippet:
         "--security-opt", "no-new-privileges",
         "--network", "none",
         "-v", "/absolute/path/to/flags:/opt/flags:ro",
-        "ghcr.io/bishnubista/safe-mcp-sandbox:v0.1.0"
+        "ghcr.io/bishnubista/saf-mcp-sandbox:v0.1.0"
       ]
     }
   }
@@ -40,8 +40,8 @@ Notes:
 
 ## MCP Inspector (CLI)
 - List tools and run interactively:
-  - macOS/Linux: `npx @modelcontextprotocol/inspector -- docker run --rm -i --network none -v "$(pwd)/flags:/opt/flags:ro" ghcr.io/bishnubista/safe-mcp-sandbox:v0.1.0`
-  - Windows PowerShell: `npx @modelcontextprotocol/inspector -- docker run --rm -i --network none -v "${PWD}/flags:/opt/flags:ro" ghcr.io/bishnubista/safe-mcp-sandbox:v0.1.0`
+  - macOS/Linux: `npx @modelcontextprotocol/inspector -- docker run --rm -i --network none -v "$(pwd)/flags:/opt/flags:ro" ghcr.io/bishnubista/saf-mcp-sandbox:v0.1.0`
+  - Windows PowerShell: `npx @modelcontextprotocol/inspector -- docker run --rm -i --network none -v "${PWD}/flags:/opt/flags:ro" ghcr.io/bishnubista/saf-mcp-sandbox:v0.1.0`
 
 ## Troubleshooting
 - Tools not being called: ensure your client enables tools for the conversation.

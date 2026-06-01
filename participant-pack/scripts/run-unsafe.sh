@@ -14,7 +14,7 @@ if [[ -z "${IMAGE:-}" && -f "${PACK_DIR}/image.env" ]]; then
 fi
 
 # Default to public alias image if still unset
-IMAGE=${IMAGE:-ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08}
+IMAGE=${IMAGE:-ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08}
 FLAGS_DIR=${FLAGS_DIR:-"$PWD/flags"}
 
 docker run --rm -i \

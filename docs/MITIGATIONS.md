@@ -1,6 +1,6 @@
-# Mitigation Guide (SAFE‑T1001)
+# Mitigation Guide (SAF‑T1001)
 
-SAFE‑T1001 arises when untrusted tool metadata is injected into model context and the model follows those instructions. Combine technical and policy controls.
+SAF‑T1001 arises when untrusted tool metadata is injected into model context and the model follows those instructions. Combine technical and policy controls.
 
 ## Server‑Side Options
 - Sanitize tool descriptions: remove imperatives, commands, or references to sensitive paths.

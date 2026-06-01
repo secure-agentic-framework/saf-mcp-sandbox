@@ -52,12 +52,12 @@ jobs:
           context: .
           file: docker/Dockerfile
           load: true
-          tags: safe-mcp-sandbox:smoketest
+          tags: saf-mcp-sandbox:smoketest
 
       - name: Run smoke test (unsafe vs safe)
         timeout-minutes: 5
         env:
-          IMAGE: safe-mcp-sandbox:smoketest
+          IMAGE: saf-mcp-sandbox:smoketest
         run: node server/scripts/smoke.mjs
 
       - name: Log in to GHCR
@@ -73,10 +73,10 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            # Organizer image (private/internal): safe-mcp-sandbox
-            ghcr.io/${{ github.repository_owner }}/safe-mcp-sandbox
-            # Participant alias (public): safe-mcp-hackathon
-            ghcr.io/${{ github.repository_owner }}/safe-mcp-hackathon
+            # Organizer image (private/internal): saf-mcp-sandbox
+            ghcr.io/${{ github.repository_owner }}/saf-mcp-sandbox
+            # Participant alias (public): saf-mcp-hackathon
+            ghcr.io/${{ github.repository_owner }}/saf-mcp-hackathon
           tags: |
             type=ref,event=tag
             type=semver,pattern={{version}}

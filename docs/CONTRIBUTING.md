@@ -1,6 +1,6 @@
 # Contributing
 
-This document explains how to contribute to this SAFE‑MCP hackathon repo and keep changes consistent, reviewable, and safe.
+This document explains how to contribute to this SAF‑MCP hackathon repo and keep changes consistent, reviewable, and safe.
 
 ## Project Structure & Module Organization
 - `server/`: Node.js (TypeScript) MCP server (vulnerable + safe modes).
@@ -15,7 +15,7 @@ This document explains how to contribute to this SAFE‑MCP hackathon repo and k
 - Lint/format: `npm run lint && npm run format`
 - Test: `npm test` (use `-w` for watch)
 - Build: `npm run build` (emits to `server/dist`)
-- Docker (local): `docker build -t safe-mcp-tpa:dev -f docker/Dockerfile .`
+- Docker (local): `docker build -t saf-mcp-tpa:dev -f docker/Dockerfile .`
 
 ## Coding Style & Naming Conventions
 - Indentation: 2 spaces; max line length ~100.

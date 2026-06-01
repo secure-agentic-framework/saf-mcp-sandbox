@@ -13,7 +13,7 @@ if [[ -z "${IMAGE:-}" ]]; then
   if [[ -z "$owner" ]]; then
     owner="bishnubista"
   fi
-  IMAGE="ghcr.io/${owner}/safe-mcp-sandbox:latest"
+  IMAGE="ghcr.io/${owner}/saf-mcp-sandbox:latest"
 fi
 FLAGS_DIR=${FLAGS_DIR:-"$PWD/flags"}
 

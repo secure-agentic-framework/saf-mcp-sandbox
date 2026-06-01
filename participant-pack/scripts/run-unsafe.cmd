@@ -10,7 +10,7 @@ if "%IMAGE%"=="" if exist "%ENV_FILE%" for /f "usebackq tokens=1,* delims==" %%A
   if /I "%%A"=="IMAGE" set "IMAGE=%%B"
 )
 
-if "%IMAGE%"=="" set IMAGE=ghcr.io/bishnubista/safe-mcp-hackathon:hackathon-2025-08
+if "%IMAGE%"=="" set IMAGE=ghcr.io/bishnubista/saf-mcp-hackathon:hackathon-2025-08
 if "%FLAGS_DIR%"=="" set FLAGS_DIR=%cd%\flags
 
 docker run --rm -i ^

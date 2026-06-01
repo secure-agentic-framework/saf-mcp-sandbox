@@ -3,8 +3,8 @@
 This file records the choices we made so future events stay consistent.
 
 ### Images and Repos
-- Organizer image: `ghcr.io/<owner>/safe-mcp-sandbox` (private).
-- Participant image (alias): `ghcr.io/<owner>/safe-mcp-hackathon` (public).
+- Organizer image: `ghcr.io/<owner>/saf-mcp-sandbox` (private).
+- Participant image (alias): `ghcr.io/<owner>/saf-mcp-hackathon` (public).
 - Registry: GHCR. Docker Hub is optional and not used by default.
 
 ### CI and Publishing
@@ -21,7 +21,7 @@ This file records the choices we made so future events stay consistent.
 
 ### Participant Pack Configuration
 - Single source of truth for the image tag lives in `participant-pack/image.env`:
-  - Format: `IMAGE=ghcr.io/<owner>/safe-mcp-hackathon:<alias>`.
+  - Format: `IMAGE=ghcr.io/<owner>/saf-mcp-hackathon:<alias>`.
   - Bash and Windows scripts read `image.env` if `IMAGE` is not already set in the environment.
   - Precedence: user-provided `IMAGE` env var > `image.env` > script fallback.
 - Rationale: one-line bump per event, consistent across all scripts and docs.
@@ -29,7 +29,7 @@ This file records the choices we made so future events stay consistent.
 ### Event Release Flow (Summary)
 1. Run manual publish workflow and set the event alias (e.g., `hackathon-YYYY-MM`).
 2. Update `participant-pack/image.env` to the new alias.
-3. Sync `participant-pack/` to the public repo `safe-mcp-hackathon` and push:
+3. Sync `participant-pack/` to the public repo `saf-mcp-hackathon` and push:
    - Preferred: `scripts/publish-participant.sh` (uses `git subtree split` and pushes to `main`).
    - Alt: manual copy/rsync to a checkout of the public repo.
 4. Tag the participant repo with the same alias for traceability.

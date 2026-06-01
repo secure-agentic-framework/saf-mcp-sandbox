@@ -2,7 +2,7 @@
 setlocal enableextensions
 
 rem Default to organizer image under your GHCR owner. For now use 'bishnubista'.
-if "%IMAGE%"=="" set IMAGE=ghcr.io/bishnubista/safe-mcp-sandbox:latest
+if "%IMAGE%"=="" set IMAGE=ghcr.io/bishnubista/saf-mcp-sandbox:latest
 if "%FLAGS_DIR%"=="" set FLAGS_DIR=%cd%\flags
 
 docker run --rm -i ^
